@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp",
+  "version": "1.0.0",
+  "description": "chat de whatsapp en node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sheyshey22@github.com/sheyshey22/whatsapp_chat.git"
+  },
+  "author": "Sheyla V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheyshey22/whatsapp_chat/issues"
+  },
+  "homepage": "https://github.com/sheyshey22/whatsapp_chat#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6"
+  }
+}

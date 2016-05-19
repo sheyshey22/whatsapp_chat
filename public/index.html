@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src ="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<style>
+		#bienvenida
+		{
+			border:16px ;
+			margin: 
+		}
+	</style>
+</head>
+<body>
+	<div id="Bienvenida">
+		<h3>Hola porfavor ingesa yut nombre para entrar al chat</h3>
+		<input type="text" id="nombre">
+		<buttonid="btn_entrar">ENTRAR</button>
+	</div>
+	<div id="chat">
+		<h1>hola Sheyla</h1>
+		<p>solo puedes...</p>
+		<input type="text" id="mensaje">
+		<button onclick="guardarNombre()">guardarNombre</button>
+		<button onclick="limpiar_mensajes()">Enviar Mensajes</button>
+	
+	<ul id="lista_mensajes"></ul>
+	</div>
+
+	
+	
+	<script>
+		var socket = io('/');
+		function guardarNombre()
+		{
+			nombre =$('nombre').val();
+			$('#bienvenida').hide();
+			$('#chat').show();
+		}
+		function enviarMensaje()
+		{
+			socket.emit('chat', $('#mensaje').val() );
+		}
+		function limpiarMensaje()
+		{
+			$('#lista_mensajes').append('<li>' + _msg + '</li>');
+		}
+
+		socket.on('nuevo_mensaje', function (_msg)
+		{
+			$('#limpiar_mensajes').append('<li>' + _msg + '</li>');
+		});
+	</script>
+</body>
+</html>
