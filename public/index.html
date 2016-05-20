@@ -8,61 +8,16 @@
 	  	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	  	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" href="icomoon.css">
-		<link rel="stylesheet" href="bootstrap.min.css">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="css/icomoon.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 		
 </head>
 <body>
-	<div id="bienvenida" class="well">
-		<h3>Hola, por favor ingresa tu nombre para entrar al chat</h3>
-		<input type="text" id="nombre" class="form-control">
 		<button onclick="guardarNombre()">Entrar</button>
-	</div>
-
-	<div id="chat" class="well">
-		<h1>Bienvenid@ a mi super chat</h1>
-		<p>Solo puedes envíar mensajes, en una siguiente versión también lo verás!!</p>
-		<input type="text" id="mensaje" class="form-control">
-		<button onclick="enviarMensaj"e()">Enviar mensaje</button>
-		<button id="oculto" onclick="limpiarMensajes()">Limpiar mensajes </button>
-		<ul id="lista_mensajes" class="list-group"></ul>
-	</div>
-
-
-	<script>
-		var socket = io('/');
-		var nombre;
-
-		function guardarNombre()
-		{
-			nombre = $('#nombre').val();
-			$('#bienvenida').hide();
-			$('#chat').show();
-		}
-
-		function enviarMensaje()
-		{
-			socket.emit('chat', "<span class='label label-danger'>" +  nombre + "</span> : " + $('#mensaje').val()  );
-			$('#mensaje').val('');
-			$('#mensaje').focus();
-		}
-
-		function limpiarMensajes()
-		{
-			$('#lista_mensajes').html('');
-		}
-
-		socket.on('nuevo_mensaje', function (_msg)
-		{
-			$('#lista_mensajes').append('<li class="list-group-item">' + _msg + '</li>');
-		});
-
-	</script>
-
 	<div class="header container">
 		<div class="row">
 			<div class="col-sm-4">
@@ -71,9 +26,7 @@
 					<nav class="navbar navbar-default">
 					  <div class="container-fluid">
 					    <div class="navbar-header">
-					      <a class="navbar-brand" href="#">
-					        <img class="img-circle img-responsive" src="../image/foto.jpg" alt=" " >
-					      </a>
+					        <img class="foto-id img-circle img-responsive" src="../image/foto.jpg" alt=" " >
 					      <ul class="nav navbar-nav navbar-right">
 					      	<li><span class="icon-message"></span></li>
 					      	<li><span class="icon-dots-three-vertical"></span></li>
@@ -81,10 +34,16 @@
 					    </div>
 					  </div>
 					</nav>
+					<div class="input-group">
+				  <div class="input-group-btn">
+				    <span class="search"></span>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Buscar o empezar un chat nuevo...">
+				</div>
 					</div>
 						 <div class="panel-body">
 
-							<ul id="lista_mensajes" class="list-group"></ul>
+							
 
 				  		</div>
 				</div>
@@ -108,8 +67,36 @@
 					</nav>
 					</div>
 						 <div class="panel-body">
-							
+							<ul id="lista_mensajes" class="list-group"></ul>
+								<script>
+								var socket = io('/');
+								var nombre;
 
+								function guardarNombre()
+								{
+									nombre = $('#nombre').val();
+									$('#bienvenida').hide();
+									$('#chat').show();
+								}
+
+								function enviarMensaje()
+								{
+									socket.emit('chat', "<span class='label label-default'>" +  nombre + "</span> : " + $('#mensaje').val()  );
+									$('#mensaje').val('');
+									$('#mensaje').focus();
+								}
+
+								function limpiarMensajes()
+								{
+									$('#lista_mensajes').html('');
+								}
+
+								socket.on('nuevo_mensaje', function (_msg)
+								{
+									$('#lista_mensajes').append('<li class="list-group-item">' + _msg + '</li>');
+								});
+
+							</script>	
 				  		</div>
 				  		 <div class="panel-footer">
 				  		 	<div class="input-group-btn"><span class="icon-insert_emoticon"></span></div>
@@ -125,7 +112,6 @@
 		</div>
 		
 	</div>
-
 
 </body>
 </html>
