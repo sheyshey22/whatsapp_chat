@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-	<style>
-		#bienvenida
-		{
-			border: 1px solid #CCC;
-			margin: 10px;
-		}
-		#chat
-		{
-			margin: 10px;
-			border: 1px solid #CCC;
-			display: none;
-		}
-	</style>
+	<title>Whatsapp Web</title>
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
+	  	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="icomoon.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="main.css">
+
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+		
 </head>
 <body>
 	<div id="bienvenida" class="well">
@@ -31,13 +27,9 @@
 		<h1>Bienvenid@ a mi super chat</h1>
 		<p>Solo puedes envíar mensajes, en una siguiente versión también lo verás!!</p>
 		<input type="text" id="mensaje" class="form-control">
-		<button onclick="enviarMensaje()">Enviar mensaje</button>
-		<button onclick="limpiarMensajes()">Limpiar mensajes</button>
+		<button onclick="enviarMensaj"e()">Enviar mensaje</button>
+		<button id="oculto" onclick="limpiarMensajes()">Limpiar mensajes </button>
 		<ul id="lista_mensajes" class="list-group"></ul>
-
-		<p>
-			<small style="font-size:10px;">Si haces uso de este chat aceptas eliminar los break's por el resto de tu vida</small>
-		</p>
 	</div>
 
 
@@ -70,6 +62,71 @@
 		});
 
 	</script>
+
+	<div class="header container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid">
+					    <div class="navbar-header">
+					      <a class="navbar-brand" href="#">
+					        <img class="img-circle img-responsive" src="../image/foto.jpg" alt=" " >
+					      </a>
+					      <ul class="nav navbar-nav navbar-right">
+					      	<li><span class="icon-message"></span></li>
+					      	<li><span class="icon-dots-three-vertical"></span></li>
+					      </ul>
+					    </div>
+					  </div>
+					</nav>
+					</div>
+						 <div class="panel-body">
+
+							<ul id="lista_mensajes" class="list-group"></ul>
+
+				  		</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid">
+					    <div class="navbar-header">
+					      <a class="navbar-brand" href="#">
+					        <img class="img-circle img-responsive" src="image/foto.jpg" alt=" " ></a>
+					      	<h3>Laboratoria</h3>
+					      	<p>las contanectadas</p>
+					      <ul class="nav navbar-nav pull-right">
+					      	<li><span class="icon-attachment"></span></li>
+					      	<li><span class="icon-dots-three-vertical"></span></li>
+					      </ul>
+					    </div>
+					  </div>
+					</nav>
+					</div>
+						 <div class="panel-body">
+							
+
+				  		</div>
+				  		 <div class="panel-footer">
+				  		 	<div class="input-group-btn"><span class="icon-insert_emoticon"></span></div>
+							<input type="text" id="mensaje" class="form-control" placeholder="Escribe tu mensaje aqui..">
+							<button onclick="enviarMensaje()">Enviar mensaje</button>
+							<button onclick="limpiarMensajes()">Limpiar mensajes</button>	
+							<div><span class="icon-mic pull-right"></span></div>
+				  		 </div>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+
 </body>
 </html>
 

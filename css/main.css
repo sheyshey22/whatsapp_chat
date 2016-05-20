@@ -1,0 +1,16 @@
+* {
+  outline: 1px solid red; }
+
+#bienvenida {
+  border: 1px solid #00bfa5;
+  margin: 10px; }
+
+#chat {
+  margin: 10px;
+  border: 1px solid #00bfa5;
+  display: none; }
+
+#oculto {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
