@@ -14,9 +14,29 @@
 } 
 
 span{
-	font-size:30px;
+	position:relative;
+	bottom:50px;
+	margin-left:20px;
 }
+
 
 #oculto{
 	display:none;
+}
+.icono{
+	display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin: 7px auto;
+}
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 8px;
+    pointer-events: none;
 }

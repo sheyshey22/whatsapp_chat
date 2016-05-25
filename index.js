@@ -19,8 +19,6 @@ io.on('connection', function(socket){
 
 });
 
-
-
 http.listen(8080, function () {
 	console.log('Muy bien!, eres un crack, sabes trabajar con node JS');
 });
