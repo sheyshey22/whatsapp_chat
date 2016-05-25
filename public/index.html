@@ -20,45 +20,44 @@
 		<button onclick="guardarNombre()">Entrar</button>
 <div class="fondo container-fluid">	
 	<div class="container">
-		<div class="row">
+		<div id="window" class="row">
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="17%" >
-					<div class="iconos pull-right">
-					<span class="icon-message"></span>
-					<span class="icon-dots-three-vertical"></span>
-					</div>     
-					<div class="left-inner-addon ">
-				    <i class="icon-search"></i>
-				    <input type="search"
-				           class="form-control" 
-				           placeholder="Buscar o empezar un chat nuevo..." />
-					</div>	
+					<img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="16%" >
+					<span class="pull-right icon-message"></span>
+					<span class="pull-right icon-dots-three-vertical"></span>	
 				</div>	
-					
+				<div class="input-group">
+  					<span class="input-group-addon" id="basic-addon1"><i class=" icon-search"></i></span>
+ 					<input type="search" class="form-control" placeholder="Buscar o empezar un chat nuevo...">
+				</div>	
 
 				</div>
 			<div class="col-md-8">
-				<div class="panel panel-default">
-					    <a href="#">
-					      <img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="12%"></a>
-					      <div class="pull-right">
-					      	<span class="icon-attachment"></span>
-					      	<span class="icon-dots-three-vertical"></span>
-					      </div><h3>Laboratoria</h3>
-					      <p>las contanectadas</p>
-					      
-					 
+			<div class="row">
+				<div class="col-md-2">
+					<a href="#">
+     				<img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="70%" >
+				</div>
+				<div class="col-md-7">
+					<h4 class="media-heading">Laboratoria</h4>
+    				<p>las conectadas...</p>
+				</div>
+				<div class="col-md-3">
+					<span class="icon-attachment"></span>
+					 <span class="icon-dots-three-vertical"></span>
+				</div>
+				</div>
+		
+			<div class="panel-body">
+				<ul id="lista_mensajes" class="list-group"></ul>
 
-						 <div class="panel-body">
-							<ul id="lista_mensajes" class="list-group"></ul>
-
-				  		</div>
-				  		 <div class="panel-footer">
-				  		 	<div class="input-group-btn"><span class="icon-insert_emoticon"></span></div>
-							<input type="text" id="mensaje" class="form-control">
-								<button onclick="enviarMensaje()">Enviar mensaje</button>
-								<button onclick="limpiarMensajes()">Limpiar mensajes</button>
+			</div>
+				<div class="panel-footer">
+				  	<div class="input-group-btn"><span class="icon-insert_emoticon"></span></div>
+						<input type="text" id="mensaje" class="form-control">
+							<button onclick="enviarMensaje()">Enviar mensaje</button>
+							<button onclick="limpiarMensajes()">Limpiar mensajes</button>
 								<ul id="lista_mensajes" class="list-group"></ul>
 				  		 </div>
 				</div>

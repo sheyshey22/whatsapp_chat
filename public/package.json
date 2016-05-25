@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "chatparatodos",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheyshey22/whatsapp_chat.git"
+  },
+  "keywords": [
+    "123456s"
+  ],
+  "author": "sheyla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheyshey22/whatsapp_chat/issues"
+  },
+  "homepage": "https://github.com/sheyshey22/whatsapp_chat#readme"
+}
